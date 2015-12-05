@@ -18,4 +18,4 @@ with open("input.txt") as f:
         shared_code.increment_count_for_location(current_santa_location, coordinate_visit_counts)
         shared_code.increment_count_for_location(current_robo_santa_location, coordinate_visit_counts)
 
-    print coordinate_visit_counts.__len__()
+    print len(coordinate_visit_counts)
