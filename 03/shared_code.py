@@ -12,7 +12,7 @@ def update_current_location(current_location, instruction):
 
 
 def increment_count_for_location(location, coordinate_visit_counts):
-    if not coordinate_visit_counts.__contains__(location):
+    if location not in coordinate_visit_counts:
         coordinate_visit_counts[location] = 0
 
     coordinate_visit_counts[location] += 1

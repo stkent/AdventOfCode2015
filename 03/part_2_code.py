@@ -15,7 +15,7 @@ with open("input.txt") as f:
         current_santa_location = shared_code.update_current_location(current_santa_location, grouped_instruction[0])
         current_robo_santa_location = shared_code.update_current_location(current_robo_santa_location, grouped_instruction[1])
 
-        shared_code.incrementForLocation(current_santa_location, coordinate_visit_counts)
-        shared_code.incrementForLocation(current_robo_santa_location, coordinate_visit_counts)
+        shared_code.increment_count_for_location(current_santa_location, coordinate_visit_counts)
+        shared_code.increment_count_for_location(current_robo_santa_location, coordinate_visit_counts)
 
     print coordinate_visit_counts.__len__()
