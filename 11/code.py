@@ -1,3 +1,6 @@
+banned_characters = ["i", "o", "l"]
+
+
 def is_increasing_sequence(string):
     if len(string) == 0:
         return False
@@ -36,7 +39,7 @@ def is_valid_password(string):
     if not contains_increasing_sequence_of_at_least_three_characters(string):
         return False
 
-    for banned_character in ["i", "o", "l"]:
+    for banned_character in banned_characters:
         if banned_character in string:
             return False
 
@@ -47,7 +50,12 @@ def is_valid_password(string):
 
 
 def increment_character(character):
-    return unichr(ord('a') + (ord(character) - ord('a') + 1) % (ord('z') - ord('a') + 1))
+    dumbly_incremented_char = unichr(ord('a') + (ord(character) - ord('a') + 1) % (ord('z') - ord('a') + 1))
+
+    if dumbly_incremented_char in banned_characters:
+        return increment_character(dumbly_incremented_char)
+    else:
+        return dumbly_incremented_char
 
 
 def increment_string(string):
