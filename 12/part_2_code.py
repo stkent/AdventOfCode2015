@@ -8,6 +8,9 @@ def compute_sum(string):
         object_start_index = match.span()[0]
         object_end_index = match.span()[1] - 1
 
+        # The object we are looking to ignore may itself contain
+        # other (nested) objects, so we need to account for those
+        # by tracking these brace counts:
         number_of_left_braces_to_find = 1
         number_of_right_braces_to_find = 1
 
