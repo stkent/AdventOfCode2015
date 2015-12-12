@@ -2,7 +2,7 @@ import unittest
 import code
 
 
-class Part1Tests(unittest.TestCase):
+class Tests(unittest.TestCase):
 
     def test_validity_check_with_first_example_input(self):
         self.assertFalse(code.is_valid_password("hijklmmn"))
