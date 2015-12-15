@@ -50,12 +50,7 @@ def is_valid_password(string):
 
 
 def increment_character(character):
-    dumbly_incremented_char = unichr(ord('a') + (ord(character) - ord('a') + 1) % (ord('z') - ord('a') + 1))
-
-    if dumbly_incremented_char in banned_characters:
-        return increment_character(dumbly_incremented_char)
-    else:
-        return dumbly_incremented_char
+    return unichr(ord('a') + (ord(character) - ord('a') + 1) % (ord('z') - ord('a') + 1))
 
 
 def increment_string(string):
