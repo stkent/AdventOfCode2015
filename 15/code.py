@@ -57,7 +57,6 @@ if __name__ == "__main__":
         max_score = 0
 
         for sugar in range(1, 101):
-            print sugar
             for sprinkles in range(1, 101):
                 for candy in range(1, 101):
                     for chocolate in range(1, 101):
