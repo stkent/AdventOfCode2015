@@ -115,22 +115,23 @@ if __name__ == "__main__":
     ring_options.update(itertools.combinations(rings, 1))
     ring_options.add(None)
 
-    # print [weapon_option.name for weapon_option in weapon_options]
-    # print [armor_option.name if armor_option else "None" for armor_option in armor_options]
-    # print [map(lambda x: x.name, ring_option) if ring_option else "None" for ring_option in ring_options]
-
     loadouts_to_check = [Loadout(p[0], p[1], p[2])
                          for p in list(itertools.product(weapon_options, armor_options, ring_options))]
 
     # A crude upper bound on the cheapest viable loadout.
     minimum_cost_of_successful_loadout = sum(loadout_item.cost for loadout_item in SHOP_ITEMS)
 
+    maximum_cost_of_unsuccessful_loadout = 0
+
     for player_loadout in loadouts_to_check:
-        print "Testing loadout:", player_loadout
+        # print "Testing loadout:", player_loadout
 
         player = Combatant.initialize_with_hp_and_loadout(100, player_loadout)
 
         if player.defeats(PART_1_BOSS):
             minimum_cost_of_successful_loadout = min(minimum_cost_of_successful_loadout, player_loadout.total_cost())
+        else:
+            maximum_cost_of_unsuccessful_loadout = max(maximum_cost_of_unsuccessful_loadout, player_loadout.total_cost())
 
-    print minimum_cost_of_successful_loadout
+    print "Minimum cost of successful loadout: ", minimum_cost_of_successful_loadout
+    print "Maximum cost of unsuccessful loadout: ", maximum_cost_of_unsuccessful_loadout
