@@ -4,7 +4,7 @@ import re
 
 def reduce_molecule(current_molecule, inverted_substitutions, current_replacements_count):
     reduced_molecules = shared_code.generate_all_viable_molecules_after_single_replacement(current_molecule, inverted_substitutions)
-    most_reduced_molecule = sorted(reduced_molecules, key=lambda x: len(x))
+    most_reduced_molecule = sorted(reduced_molecules, key=lambda x: len(x))[0]
     new_replacements_count = current_replacements_count + 1
 
     if most_reduced_molecule is "e":
