@@ -14,7 +14,6 @@ class Loadout:
 
         return self.weapon.name + ", " + armor_string + ", " + rings_string
 
-
     def total_damage(self):
         # Armor never does damage.
         rings_damage = sum([r.damage for r in self.rings]) if self.rings else 0
