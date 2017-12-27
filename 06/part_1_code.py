@@ -31,6 +31,6 @@ with open("input.txt") as f:
     lit_light_count = 0
 
     for light_state in light_state_matrix.iteritems():
-        lit_light_count += light_state
+        lit_light_count += light_state[1]
 
     print "Number of lit lights: " + str(lit_light_count)
