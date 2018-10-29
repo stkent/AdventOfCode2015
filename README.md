@@ -4,6 +4,7 @@
 
 Other years' solutions:
 
+- [2018 (Kotlin)](https://github.com/stkent/AdventOfCode2018)
 - [2017 (Kotlin)](https://github.com/stkent/AdventOfCode2017)
 - [2016 (Kotlin)](https://github.com/stkent/AdventOfCode2016)
 
